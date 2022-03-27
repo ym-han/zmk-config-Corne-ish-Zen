@@ -28,8 +28,8 @@
 };
 
 &mt {
-    flavor = "tap-preferred";
-    tapping_term_ms = <205>;
+    flavor = "balanced";
+    tapping_term_ms = <210>;
 };
 
 
@@ -400,7 +400,7 @@ macros {
    &none    AS(J) AS(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &none
    &kp N0   AS(R) AS(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  AS(I)  AS(H)   &none
    AS(Z)    AS(X) AS(F) AS(L) AS(C) AS(W)       &min_plus  AS(U)     AS(O)  AS(Y)  AS(K)   AS(Q)
-                &none &sl SYM_LMOD  AS(T)       &kp SPACE  &kp DOWN  &none
+                &none   &kp BSPC    AS(T)       &kp SPACE  &sl SYM_LMOD  &none
                         >;
                 };
 
