@@ -35,6 +35,7 @@
 
 / {
 
+/*
     macros {
         vim_insert_mode: vim_insert_mode {
             label = "ZM_insert_mode";
@@ -46,7 +47,7 @@
                 ;
         };
     };
-
+*/
 
     behaviors {
         as: auto_shift {
@@ -191,13 +192,14 @@
             bindings = <&kp ESC>;
         };
 
+/*        
         combo_esc_i {
             timeout-ms = <30>;
             key-positions = <15 28>;
             bindings = <&vim_insert_mode>;
             layers = <0 1 2 3>;
         };
-
+*/
 
         combo_leftprn {
             timeout-ms = <30>;
