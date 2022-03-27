@@ -187,7 +187,7 @@
 
         combo_esc {
             timeout-ms = <30>;
-            key-positions = <26 15>;
+            key-positions = <15 26>;
             bindings = <&kp ESC>;
             layers = <0 1 2 3>;
         };
@@ -202,7 +202,7 @@
 
         combo_leftprn {
             timeout-ms = <30>;
-            key-positions = <31 20>;
+            key-positions = <20 31>;
             bindings = <&kp LPAR>;
             layers = <0 1 2 3>;
         }
@@ -216,7 +216,7 @@
 
         combo_leftbrkt {
             timeout-ms = <30>;
-            key-positions = <32 21>;
+            key-positions = <21 32>;
             bindings = <&kp LBKT>;
             layers = <0 1 2 3>;
         }
@@ -298,6 +298,14 @@
             layers = <0 3>;
         }
 
+        // move across tabs of same app
+        combo_ctrltab {
+            timeout-ms = <30>;
+            key-positions = <18 19>;
+            bindings = <&kp LC(TAB)>;
+            layers = <0 3>;
+        }
+
         // ----- talon and vimac ---------
         combo_toggle_talonspeech {
             timeout-ms = <30>;
@@ -363,11 +371,13 @@
                 };
 
                 NUM_RMOD_layer {
+/*
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  7  |  8  |  9  |     |   |  ^  | .&  |  #  |  \  |     |      |
 // |      |  |  |  1  |  2  |  3  | ()  |   |  -+ | SHFT| CTL |  =  |  [] |  `   |
 // |      |     |  4  |  5  |  6  | TAB |   |  _^ | CMD |S-CMD|  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
+*/
                         bindings = <
    &none    &kp EXCL &kp N7 &kp N8 &kp N9   &none              &kp DOT_AMP   &kp FSH_AS  &kp HASH     &kp BSLH  &none         &none
    &none    &kp PIPE &kp N1 &kp N2 &kp N3   &kp LPN_RPN        &kp MIN_PLUS  &skq RSHFT  &sk RCTRL    &kp EQUAL &kp LBKT_RBKT &none
