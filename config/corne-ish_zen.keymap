@@ -41,8 +41,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp ESC>
-                , <&macro_press &kp I>
+                = <&macro_tap &kp ESC>
+                , <&macro_tap &kp I>
                 ;
         };
     };
@@ -365,7 +365,7 @@
 &none &kp LC(TAB) &kp LA(P)   &kp LGUI(TAB) &kp CAPS       &none              &kp GRAVE &kp LBRC  &kp HASH &kp RBRC  &none  &none
 &none &sk LCTRL   &sk LALT    &sk LGUI      &skq LSHFT     &kp PSCRN          &kp LT    &kp LPAR  &kp GT   &kp RPAR  &none  &none
 &none &none       &kp LGUI(W) &kp LGUI(Q)   &kp LG(LS(N4)) &none              &kp UNDER &kp LBKT  &kp AT   &kp PRCNT &kp TILDE &none
-                                 &none         &kp LC(LEFT)   &kp LC(RIGHT)      &kp ENTER &kp BSPC  &none   
+                              &none         &kp LC(LEFT)   &kp LC(RIGHT)      &kp ENTER &kp BSPC  &none   
                         >;
                 };
 
