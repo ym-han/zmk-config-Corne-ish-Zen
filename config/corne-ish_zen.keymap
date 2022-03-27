@@ -265,7 +265,7 @@
         combo_pgdown {
             timeout-ms = <30>;
             key-positions = <22 34>;
-            bindings = <&kp PG_DOWN>;
+            bindings = <&kp PG_DN>;
             layers = <0 3>;
         };
 
@@ -390,7 +390,7 @@
                     bindings = <
     &none      &none    &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_MUTE      &sk RA(GUI) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)  &none         &none
     &kp C_PREV &kp LEFT &kp UP     &kp DOWN       &kp RIGHT  &kp C_PP        &sk RALT    &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none
-    &none      &kp HOME &kp PG_UP  &kp PG_DOWN    &kp END    &kp C_STOP      &sk RCTRL   &kp LG(ENTER) &kp LG(O)     &kp LG(N)  &sk RA(RCTRL) &none
+    &none      &kp HOME &kp PG_UP  &kp PG_DN      &kp END    &kp C_STOP      &sk RCTRL   &kp LG(ENTER) &kp LG(O)     &kp LG(N)  &sk RA(RCTRL) &none
                                    &none          &none      &none           &kp DEL     &sk RSHFT     &none
                     >;
                 };
