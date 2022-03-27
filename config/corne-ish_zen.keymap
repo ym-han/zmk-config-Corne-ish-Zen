@@ -250,7 +250,7 @@
         combo_toggle_nav_layer {
             timeout-ms = <30>;
             key-positions = <32 33>;
-            bindings = <&kp &tog NAV>;
+            bindings = <&tog NAV>;
             layers = <0 1 2 3>;
         };
 
