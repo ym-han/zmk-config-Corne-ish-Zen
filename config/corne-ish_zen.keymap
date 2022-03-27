@@ -207,6 +207,18 @@ macros {
             bindings = <&kp ESC>;
         };
 
+        combo_undo {
+            timeout-ms = <30>;
+            key-positions = <16 27>;
+            bindings = <&kp LG(Z)>;
+        };
+
+        combo_redo {
+            timeout-ms = <30>;
+            key-positions = <16 26 27>;
+            bindings = <&kp LG(LS(Z))>;
+        };
+
         combo_leftprn {
             timeout-ms = <30>;
             key-positions = <20 31>;
