@@ -223,21 +223,18 @@ macros {
             timeout-ms = <30>;
             key-positions = <20 31>;
             bindings = <&kp LPAR>;
-            layers = <0 1 2 3>;
         };
 
         combo_rightprn {
             timeout-ms = <30>;
             key-positions = <20 33>;
             bindings = <&kp RPAR>;
-            layers = <0 1 2 3>;
         };
 
         combo_leftbrkt {
             timeout-ms = <30>;
             key-positions = <21 32>;
             bindings = <&kp LBKT>;
-            layers = <0 1 2 3>;
         };
 
         combo_rightbrkt {
@@ -277,7 +274,6 @@ macros {
             timeout-ms = <30>;
             key-positions = <32 33>;
             bindings = <&tog NAV>;
-            layers = <0 1 2 3>;
         };
 
 
@@ -398,6 +394,7 @@ macros {
                 };
 
                 NUM_RMOD_layer {
+                        label = "NUM_RMOD";
 /*
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  7  |  8  |  9  |     |   |  ^  | .&  |  #  |  \  |     |      |
