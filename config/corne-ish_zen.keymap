@@ -293,7 +293,7 @@ macros {
 
         combo_bspc {
             timeout-ms = <30>;
-            key-positions = <19 20 21>;
+            key-positions = <19 20>;
             bindings = <&kp BSPC>;
             layers = <0>;
         };
