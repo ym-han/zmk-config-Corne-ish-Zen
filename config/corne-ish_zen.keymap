@@ -31,7 +31,21 @@
 
 #define AS(keycode) &as LS(keycode) keycode
 
-/*        
+/*  
+
+macros {
+        vim_insert_mode: vim_insert_mode {
+            label = "ZM_insert_mode";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp ESC>
+                , <&macro_tap &kp I>
+                ;
+        };
+    };
+
+      
         combo_esc_i {
             timeout-ms = <30>;
             key-positions = <15 28>;
@@ -46,18 +60,7 @@
 
 / {
 
-    macros {
-        vim_insert_mode: vim_insert_mode {
-            label = "ZM_insert_mode";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp ESC>
-                , <&macro_tap &kp I>
-                ;
-        };
-    };
-
+    
 
     behaviors {
         as: auto_shift {
@@ -344,6 +347,7 @@
         compatible = "zmk,keymap";
 
                 MAIN_layer {
+                        label = "MAIN";
 // -----------------------------------------------------------------------------------------
 // |      |  J  |  G  |  M  |  P  |  V  |   |  ;: |  .&  |  /* |  "? |  '! |      |
 // |   0  |  R  |  S  |  N  |  D  |  B  |   |  ,| |  A   |  E  |  I  |  H  |      |
@@ -358,6 +362,7 @@
                 };
 
                 SYM_LMOD_layer {
+                        label = "SYM_LMOD";
 // CAGS home row mod order is optimized for mac https://precondition.github.io/home-row-mods#cags
 // -----------------------------------------------------------------------------------------
 // |     | CTL-TB | ALT-P | CMD-TB | CAPS  |      |   |  `   |  {   |  #  |  }  |     |    |
