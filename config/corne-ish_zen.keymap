@@ -336,14 +336,14 @@
                 MAIN_layer {
 // -----------------------------------------------------------------------------------------
 // |      |  J  |  G  |  M  |  P  |  V  |   |  ;: |  .&  |  /* |  "? |  '! |      |
-// |      |  R  |  S  |  N  |  D  |  B  |   |  ,| |  A   |  E  |  I  |  H  |      |
+// |   0  |  R  |  S  |  N  |  D  |  B  |   |  ,| |  A   |  E  |  I  |  H  |      |
 // |   Z  |  X  |  F  |  L  |  C  |  W  |   |  -+ |  U   |  O  |  Y  |  K  |   Q  |
 //                    |     | SYMD|  T  |   | SPC | NUMOD|     |
                         bindings = <
    &none     &kp AS(J) &kp AS(G) &kp AS(M) &kp AS(P) &kp AS(V)       &kp S_COL     &kp DOT_AMP  &kp FSH_AS &kp DQT_QN &kp SQT_BG  &none
-   &none     &kp AS(R) &kp AS(S) &kp AS(N) &kp AS(D) &kp AS(B)       &kp COM_PIPE  &kp AS(A)    &kp AS(E)  &kp AS(I)  &kp AS(H)   &none
-   &kp AS(Z) &kp AS(X) &kp AS(F) &kp AS(L) &kp AS(C) &kp AS(W)       &kp MIN_PLUS  &kp AS(U     &kp AS(O   &kp AS(Y   &kp AS(K)   &kp AS(Q)
-                  &none &sl SYM_LMOD  &kp AS(T)      &kp SPACE     &to NUM_RMOD &kp none
+   &N0       &kp AS(R) &kp AS(S) &kp AS(N) &kp AS(D) &kp AS(B)       &kp COM_PIPE  &kp AS(A)    &kp AS(E)  &kp AS(I)  &kp AS(H)   &none
+   &kp AS(Z) &kp AS(X) &kp AS(F) &kp AS(L) &kp AS(C) &kp AS(W)       &kp MIN_PLUS  &kp AS(U     &kp AS(O)  &kp AS(Y)  &kp AS(K)   &kp AS(Q)
+                  &none &sl SYM_LMOD  &kp AS(T)      &kp SPACE       &to NUM_RMOD  &kp none
                         >;
                 };
 
