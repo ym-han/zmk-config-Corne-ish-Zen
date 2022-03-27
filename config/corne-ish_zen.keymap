@@ -16,6 +16,9 @@
 #define NAV 3
 #define FN 4
 
+#define AS(keycode) &as LS(keycode) keycode
+
+
 &sl {
     release-after-ms = <5000>;
     quick-release;
@@ -29,7 +32,6 @@
     tapping_term_ms = <180>;
 };
 
-#define AS(keycode) &as LS(keycode) keycode
 
 /*  
 
@@ -362,7 +364,7 @@ macros {
                         >;
                 };
 
-                SYM_LMOD_layer {
+                sym_lmod_layer {
                         label = "SYM_LMOD";
 // CAGS home row mod order is optimized for mac https://precondition.github.io/home-row-mods#cags
 // -----------------------------------------------------------------------------------------
