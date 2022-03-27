@@ -183,7 +183,7 @@
             key-positions = <7 8>;
             bindings = <&kp EQUAL>;
             layers = <0 1 2>;
-        }
+        };
 
         combo_esc {
             timeout-ms = <30>;
