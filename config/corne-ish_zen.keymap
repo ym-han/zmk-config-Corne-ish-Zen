@@ -274,6 +274,13 @@ macros {
             layers = <0 3>;
         };
 
+        combo_select_all {
+            timeout-ms = <30>;
+            key-positions = <18 19 32>;
+            bindings = <&kp LG(A)>;
+            layers = <0 2 3>;
+        };
+
 
         // ----- nav related ---------
         // ADD: Ctrl left, ctrl right
@@ -395,7 +402,7 @@ macros {
 // |      |  J  |  G  |  M  |  P  |  V  |   |  ;: |  .&  |  /* |  "? |  '! |      |
 // |   0  |  R  |  S  |  N  |  D  |  B  |   |  ,| |  A   |  E  |  I  |  H  |      |
 // |   Z  |  X  |  F  |  L  |  C  |  W  |   |  -+ |  U   |  O  |  Y  |  K  |   Q  |
-//                    |     | SYMD|  T  |   | SPC | DOWN |     |
+//                    |     | BSPC|  T  |   | SPC | SYMOD|     |
                         bindings = <
    &none    AS(J) AS(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &none
    &kp N0   AS(R) AS(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  AS(I)  AS(H)   &none
