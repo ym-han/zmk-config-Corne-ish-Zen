@@ -283,6 +283,11 @@ macros {
             bindings = <&tog NAV>;
         };
 
+        combo_go_numrmod {
+            timeout-ms = <30>;
+            key-positions = <18 19>;
+            bindings = <&to NUM_RMOD>;
+        };
 
         combo_pgup {
             timeout-ms = <30>;
@@ -337,7 +342,7 @@ macros {
         // move across tabs of same app
         combo_ctrltab {
             timeout-ms = <30>;
-            key-positions = <18 19>;
+            key-positions = <30 31>;
             bindings = <&kp LC(TAB)>;
             layers = <0 3>;
         };
@@ -390,12 +395,12 @@ macros {
 // |      |  J  |  G  |  M  |  P  |  V  |   |  ;: |  .&  |  /* |  "? |  '! |      |
 // |   0  |  R  |  S  |  N  |  D  |  B  |   |  ,| |  A   |  E  |  I  |  H  |      |
 // |   Z  |  X  |  F  |  L  |  C  |  W  |   |  -+ |  U   |  O  |  Y  |  K  |   Q  |
-//                    |     | SYMD|  T  |   | SPC | NUMOD|     |
+//                    |     | SYMD|  T  |   | SPC | DOWN |     |
                         bindings = <
    &none    AS(J) AS(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &none
-   &kp N0   AS(R) AS(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)        AS(E)  AS(I)  AS(H)   &none
-   AS(Z)    AS(X) AS(F) AS(L) AS(C) AS(W)       &min_plus  AS(U)        AS(O)  AS(Y)  AS(K)   AS(Q)
-                &none &sl SYM_LMOD  AS(T)       &kp SPACE  &to NUM_RMOD  &none
+   &kp N0   AS(R) AS(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  AS(I)  AS(H)   &none
+   AS(Z)    AS(X) AS(F) AS(L) AS(C) AS(W)       &min_plus  AS(U)     AS(O)  AS(Y)  AS(K)   AS(Q)
+                &none &sl SYM_LMOD  AS(T)       &kp SPACE  &kp DOWN  &none
                         >;
                 };
 
@@ -406,12 +411,12 @@ macros {
 // |     | CTL-TB | ALT-P | CMD-TB | CAPS  |      |   |  `   |  {   |  #  |  }  |     |    |
 // |     |  CTRL  | ALT   | SHIFT  | CMD   |PSCRN |   |  <   |  (   |  >  |  )  |     |    |
 // |     |        | CMD-W | CMD-Q  | C-S-4 |      |   |  _   |  [   |  @  |  %  |  ~  |    |
-//                        |        | CTL-L |CTL-R |   | ENTER| BSPC |     |
+//                        |        | CTL-L |CTL-R |   | ENTER| MAIN |     |
                         bindings = <
 &none &kp LC(TAB) &kp LA(P)   &kp LG(TAB) &kp CAPS       &none              &kp GRAVE &kp LBRC  &kp HASH &kp RBRC  &none  &none
 &none &sk LCTRL   &sk LALT    &sk LGUI    &skq LSHFT     &kp PSCRN          &kp LT    &kp LPAR  &kp GT   &kp RPAR  &none  &none
 &none &none       &kp LG(W)   &kp LG(Q)   &kp LG(LS(N4)) &none              &kp UNDER &kp LBKT  &kp AT   &kp PRCNT &kp TILDE &none
-                              &none       &kp LC(LEFT)   &kp LC(RIGHT)      &kp ENTER &kp BSPC  &none   
+                              &none       &kp LC(LEFT)   &kp LC(RIGHT)      &kp ENTER &to MAIN  &none   
                         >;
                 };
 
