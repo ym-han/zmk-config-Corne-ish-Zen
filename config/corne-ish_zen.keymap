@@ -192,12 +192,12 @@
             layers = <0 1 2 3>;
         };
 
-        combo_esc_i {
-            timeout-ms = <30>;
-            key-positions = <15 28>;
-            bindings = <&vim_insert_mode>;
-            layers = <0 1 2 3>;
-        };
+//        combo_esc_i {
+//            timeout-ms = <30>;
+//            key-positions = <15 28>;
+//            bindings = <&vim_insert_mode>;
+//            layers = <0 1 2 3>;
+//        };
 
 
         combo_leftprn {
