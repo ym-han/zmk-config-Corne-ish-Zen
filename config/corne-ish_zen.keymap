@@ -29,12 +29,36 @@
     tapping_term_ms = <180>;
 };
 
+#define AS(keycode) &as LS(keycode) keycode
 
 
 
 / {
 
+    macros {
+        vim_insert_mode: vim_insert_mode {
+            label = "ZM_insert_mode";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp ESC>
+                , <&macro_press &kp I>
+                ;
+        };
+    };
+
+
     behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            #binding-cells = <2>;
+            tapping_term_ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
         s_col: s_col {
             compatible = "zmk,behavior-mod-morph";
             label = "S_COL";
@@ -100,6 +124,32 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+
+        lbkt_rbkt: lbkt_rbkt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LBKT_RBKT";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+
+        und_crt: und_crt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UND_CRT";
+            #binding-cells = <0>;
+            bindings = <&kp UNDER>, <&kp CARET>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        lpn_rpn: lpn_rpn {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LPN_RPN";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_KEY_QUICK_RELEASE";
@@ -110,13 +160,170 @@
         };
     };
 
+
+        /* Combo key positions
+         0  1  2  3  4  5    6  7  8  9 10 11
+        12 13 14 15 16 17   18 19 20 21 22 23 
+        24 25 26 27 28 29   30 31 32 33 34 35 
+                 36 37 38   39 40 41             */
+
     combos {
         compatible = "zmk,combos";
 
+
+        combo_tab {
+            timeout-ms = <30>;
+            key-positions = <3 4>;
+            bindings = <&kp TAB>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_equal {
+            timeout-ms = <30>;
+            key-positions = <7 8>;
+            bindings = <&kp EQUAL>;
+            layers = <0 1 2>;
+        }
+
+        combo_esc {
+            timeout-ms = <30>;
+            key-positions = <26 15>;
+            bindings = <&kp ESC>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_esc_i {
+            timeout-ms = <30>;
+            key-positions = <15 28>;
+            bindings = <&vim_insert_mode>;
+            layers = <0 1 2 3>;
+        };
+
+
+        combo_leftprn {
+            timeout-ms = <30>;
+            key-positions = <31 20>;
+            bindings = <&kp LPAR>;
+            layers = <0 1 2 3>;
+        }
+
+        combo_rightprn {
+            timeout-ms = <30>;
+            key-positions = <20 33>;
+            bindings = <&kp RPAR>;
+            layers = <0 1 2 3>;
+        }
+
+        combo_leftbrkt {
+            timeout-ms = <30>;
+            key-positions = <32 21>;
+            bindings = <&kp LBKT>;
+            layers = <0 1 2 3>;
+        }
+
+        combo_rightbrkt {
+            timeout-ms = <30>;
+            key-positions = <21 34>;
+            bindings = <&kp RBKT>;
+            layers = <0 1 2 3>;
+        }
+
+
+
+        // ----- modifiers ---------
+        combo_shift {
+            timeout-ms = <30>;
+            key-positions = <16 17>;
+            bindings = <&kp TAB>;
+            layers = <0 3>;
+        }
+
+        combo_lgui {
+            timeout-ms = <30>;
+            key-positions = <15 16>;
+            bindings = <&kp LGUI>;
+            layers = <0 3>;
+        }
+
+
+        // ----- nav related ---------
+        // ADD: Ctrl left, ctrl right
+        combo_toggle_nav_layer {
+            timeout-ms = <30>;
+            key-positions = <32 33>;
+            bindings = <&kp &tog NAV>;
+            layers = <0 1 2 3>;
+        }
+
+
+        combo_pgup {
+            timeout-ms = <30>;
+            key-positions = <21 33>;
+            bindings = <&kp PG_UP>;
+            layers = <0 3>;
+        }
+
+        combo_pgdown {
+            timeout-ms = <30>;
+            key-positions = <22 34>;
+            bindings = <&kp PG_DOWN>;
+            layers = <0 3>;
+        }
+
+        combo_leftarrow {
+            timeout-ms = <30>;
+            key-positions = <19 20>;
+            bindings = <&kp LEFT_ARROW>;
+            layers = <0 3>;
+        }
+
+        combo_rightarrow {
+            timeout-ms = <30>;
+            key-positions = <20 21>;
+            bindings = <&kp RIGHT_ARROW>;
+            layers = <0 3>;
+        }
+
+        combo_uparrow {
+            timeout-ms = <30>;
+            key-positions = <8 9>;
+            bindings = <&kp UP_ARROW>;
+            layers = <0 3>;
+        }
+
+        combo_downarrow {
+            timeout-ms = <30>;
+            key-positions = <31 32>;
+            bindings = <&kp RIGHT_ARROW>;
+            layers = <0 3>;
+        }
+
+        // ----- talon and vimac ---------
+        combo_toggle_talonspeech {
+            timeout-ms = <30>;
+            key-positions = <27 28>;
+            bindings = <&kp LG(LA(LS(S)))>;
+            layers = <0 1 2 3>;
+        }
+
+        combo_toggle_vimac {
+            timeout-ms = <30>;
+            key-positions = <26 27>;
+            bindings = <&kp LC(LA(LS(V)))>;
+            layers = <0 1 2 3>;
+        }
+
+        combo_talonmouse {
+            timeout-ms = <30>;
+            key-positions = <26 27 28>;
+            bindings = <&kp LG(LA(LS(M)))>;
+            layers = <0 1 2 3>;
+        }
+
+        // click and right click: 30 19, 19 32
         // zoom in and zoom out
-        // esc
-        // equal = 
         // ==
+        // left and right brace
 
     };
 
@@ -133,37 +340,39 @@
 // |   Z  |  X  |  F  |  L  |  C  |  W  |   |  -+ |  U   |  O  |  Y  |  K  |   Q  |
 //                    |     | SYMD|  T  |   | SPC | NUMOD|     |
                         bindings = <
-   &none     &kp J  &kp G &kp M &kp P &kp V       &kp S_COL     &kp DOT_AMP  &kp FSH_AS &kp DQT_QN &kp SQT_BG  &none
-   &none     &kp R  &kp S &kp N &kp D &kp B       &kp COM_PIPE  &kp A        &kp E      &kp I      &kp H       &none
-   &kp Z     &kp X  &kp F &kp L &kp C &kp W       &kp MIN_PLUS  &kp U        &kp O      &kp Y      &kp K       &kp Q
-                  &none &sl SYM_LMOD  &kp T       &kp SPACE     &to NUM_RMOD &kp none
+   &none     &kp AS(J) &kp AS(G) &kp AS(M) &kp AS(P) &kp AS(V)       &kp S_COL     &kp DOT_AMP  &kp FSH_AS &kp DQT_QN &kp SQT_BG  &none
+   &none     &kp AS(R) &kp AS(S) &kp AS(N) &kp AS(D) &kp AS(B)       &kp COM_PIPE  &kp AS(A)    &kp AS(E)  &kp AS(I)  &kp AS(H)   &none
+   &kp AS(Z) &kp AS(X) &kp AS(F) &kp AS(L) &kp AS(C) &kp AS(W)       &kp MIN_PLUS  &kp AS(U     &kp AS(O   &kp AS(Y   &kp AS(K)   &kp AS(Q)
+                  &none &sl SYM_LMOD  &kp AS(T)      &kp SPACE     &to NUM_RMOD &kp none
                         >;
                 };
+
                 SYM_LMOD_layer {
+// CAGS home row mod order is optimized for mac https://precondition.github.io/home-row-mods#cags
 // -----------------------------------------------------------------------------------------
 // |     | CTL-TB | ALT-P | CMD-TB | CAPS  |      |   |  `   |  {   |  #  |  }  |     |    |
-// |     |   ALT  | CTRL  | SHIFT  | CMD   |PSCRN |   |  <   |  (   |  >  |  )  |     |    |
+// |     |  CTRL  | ALT   | SHIFT  | CMD   |PSCRN |   |  <   |  (   |  >  |  )  |     |    |
 // |     |        | CMD-W | CMD-Q  | C-S-4 |      |   |  _   |  [   |  @  |  %  |  ~  |    |
-//                        |        | ALT-L |ALT-R |   | BSPC | ENTER|     |
+//                        |        | CTL-L |CTL-R |   | ENTER| BSPC |     |
                         bindings = <
 &kp none &kp LC(TAB) &kp LA(P)   &kp LGUI(TAB) &kp CAPS       &none              &kp GRAVE &kp LBRC  &kp HASH &kp RBRC  &none  &none
-&kp none &sk LALT    &sk LCTRL   &skq LSHFT    &sk LGUI       &kp PSCRN          &kp LT    &kp LPAR  &kp GT   &kp RPAR  &none  &none
+&kp none &sk LCTRL   &sk LALT    &sk LGUI      &skq LSHFT     &kp PSCRN          &kp LT    &kp LPAR  &kp GT   &kp RPAR  &none  &none
 &kp none &none       &kp LGUI(W) &kp LGUI(Q)   &kp LG(LS(N4)) &none              &kp UNDER &kp LBKT  &kp AT   &kp PRCNT &TILDE &none
-                                 &none         &kp LA(LEFT)   &kp LA(RIGHT)      &kp BSPC  &kp ENTER  &none   
+                                 &none         &kp LC(LEFT)   &kp LC(RIGHT)      &kp ENTER &kp BSPC  &none   
                         >;
                 };
 
                 NUM_RMOD_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// |      |  !  |  7  |  8  |  9  |     |   |  ^  | .&  |  #  |  \  |     |      |
+// |      |  |  |  1  |  2  |  3  | ()  |   |  -+ | SHFT| CTL |  =  |  [] |  `   |
+// |      |     |  4  |  5  |  6  | TAB |   |  _^ | CMD |S-CMD|  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp  TAB &kp EXCL &kp N7 &kp N8 &kp N9   &kp FSH_AS         &kp CARET     &kp LPAR   &kp RPAR  &kp AMPS  &kp KP_MULTIPLY   &kp BSPC
-   &kp PIPE &kp BSLH &kp N1 &kp N2 &kp N3   &kp EQUAL          &kp MIN_PLUS  &skq RSHFT &sk RCTRL &kp EQUAL &kp LBKT     &kp RBKT &kp BSLH &kp GRAVE
-   &none    &LSHFT   &kp N4 &kp N5 &kp N6   &none              &kp UNDER     &sk RGUI   &sk LS(RGUI)  &kp RBRC &kp PIPE &kp DLLR
-                    	     &none &kp BSPC &N0                &kp SPACE     &to MAIN   &none
+   &none    &kp EXCL &kp N7 &kp N8 &kp N9   &none              &kp DOT_AMP   &kp FSH_AS  &kp HASH     &kp BSLH  &none         &none
+   &none    &kp PIPE &kp N1 &kp N2 &kp N3   &kp LPN_RPN        &kp MIN_PLUS  &skq RSHFT  &sk RCTRL    &kp EQUAL &kp LBKT_RBKT &none
+   &none    &none    &kp N4 &kp N5 &kp N6   &TAB               &kp UND_CRT   &sk RGUI    &sk LS(RGUI) &kp RBRC  &kp       &kp DLLR
+                    	     &none &kp BSPC &N0                &kp SPACE     &to MAIN    &none
                         >;
                 };
 
@@ -171,18 +380,9 @@
                 NAV_layer {
                     bindings = <
     &none      &none    &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_MUTE      &sk RA(GUI) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)  &none         &none
-    &kp C_PREV &kp LEFT &kp DOWN     &kp UP       &kp RIGHT  &kp C_PP        &sk RALT    &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none
-               &kp HOME &kp PG_DN    &kp PG_UP    &kp END    &kp C_STOP      &sk RCTRL   &kp LG(ENTER) &kp LG(O)     &kp LG(N)  &sk RA(RCTRL)
-                                                  &none      &none           &kp DEL     &sk RSHFT
-                    >;
-                };
-
-                FN_layer {
-                    bindings = <
-                        &kp F7 &kp F8 &kp F9 &kp F10      &none &kp C_BRI_DN &kp C_BRI_UP &none
-            &none &none &kp F1 &kp F2 &kp F3 &kp F11      &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-                  &none &kp F4 &kp F5 &kp F6 &kp F12      &none &bt BT_CLR   &none        &none        &none
-                                      &none  &none        &none &none
+    &kp C_PREV &kp LEFT &kp UP     &kp DOWN       &kp RIGHT  &kp C_PP        &sk RALT    &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none
+    &none      &kp HOME &kp PG_UP  &kp PG_DOWN    &kp END    &kp C_STOP      &sk RCTRL   &kp LG(ENTER) &kp LG(O)     &kp LG(N)  &sk RA(RCTRL) &none
+                                   &none          &none      &none           &kp DEL     &sk RSHFT     &none
                     >;
                 };
         };
