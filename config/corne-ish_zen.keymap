@@ -362,9 +362,9 @@
 // |     |        | CMD-W | CMD-Q  | C-S-4 |      |   |  _   |  [   |  @  |  %  |  ~  |    |
 //                        |        | CTL-L |CTL-R |   | ENTER| BSPC |     |
                         bindings = <
-&kp none &kp LC(TAB) &kp LA(P)   &kp LGUI(TAB) &kp CAPS       &none              &kp GRAVE &kp LBRC  &kp HASH &kp RBRC  &none  &none
-&kp none &sk LCTRL   &sk LALT    &sk LGUI      &skq LSHFT     &kp PSCRN          &kp LT    &kp LPAR  &kp GT   &kp RPAR  &none  &none
-&kp none &none       &kp LGUI(W) &kp LGUI(Q)   &kp LG(LS(N4)) &none              &kp UNDER &kp LBKT  &kp AT   &kp PRCNT &kp TILDE &none
+&none &kp LC(TAB) &kp LA(P)   &kp LGUI(TAB) &kp CAPS       &none              &kp GRAVE &kp LBRC  &kp HASH &kp RBRC  &none  &none
+&none &sk LCTRL   &sk LALT    &sk LGUI      &skq LSHFT     &kp PSCRN          &kp LT    &kp LPAR  &kp GT   &kp RPAR  &none  &none
+&none &none       &kp LGUI(W) &kp LGUI(Q)   &kp LG(LS(N4)) &none              &kp UNDER &kp LBKT  &kp AT   &kp PRCNT &kp TILDE &none
                                  &none         &kp LC(LEFT)   &kp LC(RIGHT)      &kp ENTER &kp BSPC  &none   
                         >;
                 };
@@ -378,10 +378,10 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
 */
                         bindings = <
-   &none    &kp EXCL &kp N7 &kp N8 &kp N9   &none           &dot_amp   &fsh_as  &kp HASH     &kp BSLH  &none         &none
+   &none    &kp EXCL &kp N7 &kp N8 &kp N9   &none           &dot_amp   &fsh_as     &kp HASH     &kp BSLH  &none      &none
    &none    &kp PIPE &kp N1 &kp N2 &kp N3   &lpn_rpn        &min_plus  &skq RSHFT  &sk RCTRL    &kp EQUAL &lbkt_rbkt &none
-   &none    &none    &kp N4 &kp N5 &kp N6   &kp TAB            &und_crt   &sk RGUI    &sk LS(RGUI) &kp RBRC  &kp DLLR &none
-                    	     &none &kp BSPC &kp N0          &kp SPACE     &to MAIN    &none
+   &none    &none    &kp N4 &kp N5 &kp N6   &kp TAB         &und_crt   &sk RGUI    &sk LS(RGUI) &kp RBRC  &kp DLLR   &none
+                    	     &none &kp BSPC &kp N0          &kp SPACE  &to MAIN    &none
                         >;
                 };
 
