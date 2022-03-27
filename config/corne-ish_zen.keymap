@@ -291,32 +291,40 @@ macros {
             layers = <0 3>;
         };
 
+        combo_bspc {
+            timeout-ms = <30>;
+            key-positions = <19 20 21>;
+            bindings = <&kp BSPC>;
+            layers = <0>;
+        };
+
+
         combo_leftarrow {
             timeout-ms = <30>;
-            key-positions = <19 20>;
-            bindings = <&kp LEFT_ARROW>;
+            key-positions = <19 20 21>;
+            bindings = <&kp LEFT>;
             layers = <0 3>;
         };
 
         combo_rightarrow {
             timeout-ms = <30>;
             key-positions = <20 21>;
-            bindings = <&kp RIGHT_ARROW>;
-            layers = <0 3>;
+            bindings = <&kp RIGHT>;
+            layers = <0>;
         };
 
         combo_uparrow {
             timeout-ms = <30>;
             key-positions = <8 9>;
-            bindings = <&kp UP_ARROW>;
-            layers = <0 3>;
+            bindings = <&kp UP>;
+            layers = <0>;
         };
 
         combo_downarrow {
             timeout-ms = <30>;
             key-positions = <31 32>;
-            bindings = <&kp RIGHT_ARROW>;
-            layers = <0 3>;
+            bindings = <&kp DOWN>;
+            layers = <0>;
         };
 
         // move across tabs of same app
@@ -407,7 +415,7 @@ macros {
 // |      |  !  |  7  |  8  |  9  |     |   |  *  | .&  |  #  |  \  |     |      |
 // |      |  |  |  1  |  2  |  3  | ()  |   |  -+ | SHFT| CTL |  =  |  [] |  `   |
 // |      |     |  4  |  5  |  6  | TAB |   |  _^ | CMD |S-CMD|  }  |  $  |      |
-//                    | GUI |     | SPC |   | SPC | MAIN| ALT |
+//                    |     | BSPC| N0  |   | SPC | MAIN|     |
 */
                         bindings = <
    &none    &kp EXCL &kp N7 &kp N8 &kp N9   &none           &kp KP_ASTERISK &dot_amp    &kp HASH     &kp BSLH  &none      &none
