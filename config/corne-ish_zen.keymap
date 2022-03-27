@@ -235,6 +235,12 @@ macros {
             layers = <0 1 2 3>;
         };
 
+        combo_leftbrc {
+            timeout-ms = <30>;
+            key-positions = <2 13>;
+            bindings = <&kp LBRC>;
+            layers = <0 1 2 3>;
+        };
 
 
         // ----- modifiers ---------
@@ -359,12 +365,11 @@ macros {
    &none    AS(J) AS(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &none
    &kp N0   AS(R) AS(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)        AS(E)  AS(I)  AS(H)   &none
    AS(Z)    AS(X) AS(F) AS(L) AS(C) AS(W)       &min_plus  AS(U)        AS(O)  AS(Y)  AS(K)   AS(Q)
-            &none &none  AS(T)                  &kp SPACE  &to NUM_RMOD  &none
-//             &none &sl SYM_LMOD  AS(T)           &kp SPACE  &to NUM_RMOD  &none
+                &none &sl SYM_LMOD  AS(T)       &kp SPACE  &to NUM_RMOD  &none
                         >;
                 };
 
-                sym_lmod_layer {
+                SYM_LMOD_layer {
                         label = "SYM_LMOD";
 // CAGS home row mod order is optimized for mac https://precondition.github.io/home-row-mods#cags
 // -----------------------------------------------------------------------------------------
@@ -373,10 +378,10 @@ macros {
 // |     |        | CMD-W | CMD-Q  | C-S-4 |      |   |  _   |  [   |  @  |  %  |  ~  |    |
 //                        |        | CTL-L |CTL-R |   | ENTER| BSPC |     |
                         bindings = <
-&none &kp LC(TAB) &kp LA(P)   &kp LGUI(TAB) &kp CAPS       &none              &kp GRAVE &kp LBRC  &kp HASH &kp RBRC  &none  &none
-&none &sk LCTRL   &sk LALT    &sk LGUI      &skq LSHFT     &kp PSCRN          &kp LT    &kp LPAR  &kp GT   &kp RPAR  &none  &none
-&none &none       &kp LGUI(W) &kp LGUI(Q)   &kp LG(LS(N4)) &none              &kp UNDER &kp LBKT  &kp AT   &kp PRCNT &kp TILDE &none
-                              &none         &kp LC(LEFT)   &kp LC(RIGHT)      &kp ENTER &kp BSPC  &none   
+&none &kp LC(TAB) &kp LA(P)   &kp LG(TAB) &kp CAPS       &none              &kp GRAVE &kp LBRC  &kp HASH &kp RBRC  &none  &none
+&none &sk LCTRL   &sk LALT    &sk LGUI    &skq LSHFT     &kp PSCRN          &kp LT    &kp LPAR  &kp GT   &kp RPAR  &none  &none
+&none &none       &kp LG(W)   &kp LG(Q)   &kp LG(LS(N4)) &none              &kp UNDER &kp LBKT  &kp AT   &kp PRCNT &kp TILDE &none
+                              &none       &kp LC(LEFT)   &kp LC(RIGHT)      &kp ENTER &kp BSPC  &none   
                         >;
                 };
 
@@ -385,7 +390,7 @@ macros {
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  7  |  8  |  9  |     |   |  ^  | .&  |  #  |  \  |     |      |
 // |      |  |  |  1  |  2  |  3  | ()  |   |  -+ | SHFT| CTL |  =  |  [] |  `   |
-// |      |     |  4  |  5  |  6  | TAB |   |  _^ | CMD |S-CMD|  }  | "|" |  ~   |
+// |      |     |  4  |  5  |  6  | TAB |   |  _^ | CMD |S-CMD|  }  |  $  |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
 */
                         bindings = <
