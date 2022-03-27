@@ -205,28 +205,28 @@
             key-positions = <20 31>;
             bindings = <&kp LPAR>;
             layers = <0 1 2 3>;
-        }
+        };
 
         combo_rightprn {
             timeout-ms = <30>;
             key-positions = <20 33>;
             bindings = <&kp RPAR>;
             layers = <0 1 2 3>;
-        }
+        };
 
         combo_leftbrkt {
             timeout-ms = <30>;
             key-positions = <21 32>;
             bindings = <&kp LBKT>;
             layers = <0 1 2 3>;
-        }
+        };
 
         combo_rightbrkt {
             timeout-ms = <30>;
             key-positions = <21 34>;
             bindings = <&kp RBKT>;
             layers = <0 1 2 3>;
-        }
+        };
 
 
 
@@ -236,14 +236,14 @@
             key-positions = <16 17>;
             bindings = <&kp TAB>;
             layers = <0 3>;
-        }
+        };
 
         combo_lgui {
             timeout-ms = <30>;
             key-positions = <15 16>;
             bindings = <&kp LGUI>;
             layers = <0 3>;
-        }
+        };
 
 
         // ----- nav related ---------
@@ -253,7 +253,7 @@
             key-positions = <32 33>;
             bindings = <&kp &tog NAV>;
             layers = <0 1 2 3>;
-        }
+        };
 
 
         combo_pgup {
@@ -261,42 +261,42 @@
             key-positions = <21 33>;
             bindings = <&kp PG_UP>;
             layers = <0 3>;
-        }
+        };
 
         combo_pgdown {
             timeout-ms = <30>;
             key-positions = <22 34>;
             bindings = <&kp PG_DOWN>;
             layers = <0 3>;
-        }
+        };
 
         combo_leftarrow {
             timeout-ms = <30>;
             key-positions = <19 20>;
             bindings = <&kp LEFT_ARROW>;
             layers = <0 3>;
-        }
+        };
 
         combo_rightarrow {
             timeout-ms = <30>;
             key-positions = <20 21>;
             bindings = <&kp RIGHT_ARROW>;
             layers = <0 3>;
-        }
+        };
 
         combo_uparrow {
             timeout-ms = <30>;
             key-positions = <8 9>;
             bindings = <&kp UP_ARROW>;
             layers = <0 3>;
-        }
+        };
 
         combo_downarrow {
             timeout-ms = <30>;
             key-positions = <31 32>;
             bindings = <&kp RIGHT_ARROW>;
             layers = <0 3>;
-        }
+        };
 
         // move across tabs of same app
         combo_ctrltab {
@@ -304,7 +304,7 @@
             key-positions = <18 19>;
             bindings = <&kp LC(TAB)>;
             layers = <0 3>;
-        }
+        };
 
         // ----- talon and vimac ---------
         combo_toggle_talonspeech {
@@ -312,21 +312,21 @@
             key-positions = <27 28>;
             bindings = <&kp LG(LA(LS(S)))>;
             layers = <0 1 2 3>;
-        }
+        };
 
         combo_toggle_vimac {
             timeout-ms = <30>;
             key-positions = <26 27>;
             bindings = <&kp LC(LA(LS(V)))>;
             layers = <0 1 2 3>;
-        }
+        };
 
         combo_talonmouse {
             timeout-ms = <30>;
             key-positions = <26 27 28>;
             bindings = <&kp LG(LA(LS(M)))>;
             layers = <0 1 2 3>;
-        }
+        };
 
         // click and right click: 30 19, 19 32
         // zoom in and zoom out
