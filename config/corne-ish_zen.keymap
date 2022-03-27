@@ -187,12 +187,12 @@ macros {
         compatible = "zmk,combos";
 
 
-        combo_th_bigram {
+/*        combo_th_bigram {
             timeout-ms = <30>;
             key-positions = <17 28>;
             bindings = <&kp T, &kp H>;
-            layers = <0 1 2 3>;
-        };
+            layers = <0 1 2>;
+        };*/
 
         combo_tab {
             timeout-ms = <30>;
