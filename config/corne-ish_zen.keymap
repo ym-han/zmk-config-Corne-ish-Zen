@@ -17,7 +17,7 @@
 #define FN 4
 
 #define AS(keycode) &as LS(keycode) keycode
-
+#define ASW(keycode) &asw LS(keycode) keycode
 
 &sl {
     release-after-ms = <5000>;
