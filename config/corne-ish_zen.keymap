@@ -418,7 +418,7 @@ macros {
                         bindings = <
    &none    ASW(J) ASW(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &none
    &kp N0   ASW(R) ASW(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  ASW(I)  ASW(H)   &none
-   AS(Z)    ASW(X) ASW(F) ASW(L) AS(C) AS(W)       &min_plus  AS(U)     AS(O)  ASW(Y)  ASW(K)   AS(Q)
+   ASW(Z)    ASW(X) ASW(F) AS(L) AS(C) AS(W)       &min_plus  AS(U)     AS(O)  ASW(Y)  ASW(K)   ASW(Q)
                 &none   &kp BSPC    AS(T)       &kp SPACE  &sl SYM_LMOD  &none
                         >;
                 };
