@@ -279,6 +279,20 @@ macros {
         };
 
 
+        combo_alt_p {
+            timeout-ms = <30>;
+            key-positions = <15 16 17>;
+            bindings = <&kp LA(P)>;
+            layers = <0 2 3>;
+        }
+
+        combo_cmd_space {
+            timeout-ms = <30>;
+            key-positions = <30 31>;
+            bindings = <&kp LG(SPACE)>;
+            layers = <0 2 3>;
+        };
+
         // ----- modifiers ---------
         combo_shift {
             timeout-ms = <30>;
@@ -320,14 +334,14 @@ macros {
             timeout-ms = <30>;
             key-positions = <21 33>;
             bindings = <&kp PG_UP>;
-            layers = <0 3>;
+            layers = <0 2 3>;
         };
 
         combo_pgdown {
             timeout-ms = <30>;
             key-positions = <22 34>;
             bindings = <&kp PG_DN>;
-            layers = <0 3>;
+            layers = <0 2 3>;
         };
 
         combo_bspc {
@@ -369,7 +383,7 @@ macros {
         // move across tabs of same app
         combo_ctrltab {
             timeout-ms = <30>;
-            key-positions = <30 31>;
+            key-positions = <30 31 32>;
             bindings = <&kp LC(TAB)>;
             layers = <0 3>;
         };
@@ -435,43 +449,54 @@ macros {
                         label = "SYM_LMOD";
 // CAGS home row mod order is optimized for mac https://precondition.github.io/home-row-mods#cags
 // -----------------------------------------------------------------------------------------
-// |     | CTL-TB | ALT-P | CMD-TB | CAPS  | PSCRN|   |  `   |  >   |  %  |  }  |     |    |
+// |     | CTL-TB | C-S-4 | CMD-TB | CAPS  |   ^  |   |  `   |  >   |  %  |  }  |     |    |
 // |     |  CTRL  | ALT   | CMD    | SHIFT |   $  |   |  <   |  (   |  {  |  )  |     |    |
-// |     |        | CMD-W | CMD-Q  | C-S-4 |   #  |   |  _   |  [   |  @  |  ~  |     |    |
-//                        |        | CTL-L |CTL-R |   |  ^   | MAIN |     |
+// |     |  PSCRN | CMD-W | CMD-Q  | ALT-P |   #  |   |  _   |  [   |  @  |  ~  |     |    |
+//                        |        | CTL-L |CTL-R |   | ENTER| MAIN |     |
                         bindings = <
-&none &kp LC(TAB) &kp LA(P)   &kp LG(TAB) &kp CAPS       &kp PSCRN          &kp GRAVE &kp LBRC  &kp PRCNT &kp RBRC  &none  &none
-&none &sk LCTRL   &sk LALT    &sk LGUI    &skq LSHFT     &kp DLLR           &kp LT    &kp LPAR  &kp GT    &kp RPAR  &none  &none
-&none &none       &kp LG(W)   &kp LG(Q)   &kp LG(LS(N4)) &kp HASH           &kp UNDER &kp LBKT  &kp AT    &kp TILDE &none  &none
-                              &none       &kp LC(LEFT)   &kp LC(RIGHT)      &kp CARET &to MAIN  &none   
+&none &kp LC(TAB) &kp LG(LS(N4)) &kp LG(TAB)   &kp CAPS     &kp CARET          &kp GRAVE &kp LBRC  &kp PRCNT &kp RBRC  &none  &none
+&none &sk LCTRL   &sk LALT       &sk LGUI      &skq LSHFT   &kp DLLR           &kp LT    &kp LPAR  &kp GT    &kp RPAR  &none  &none
+&none &kp LG(Q)   &kp LG(W)      &kp LG(SPACE) &kp LA(P)    &kp HASH           &kp UNDER &kp LBKT  &kp AT    &kp TILDE &none  &none
+                                 &none         &kp LC(LEFT) &kp LC(RIGHT)      &kp ENTER &to MAIN  &none   
                         >;
                 };
 
                 NUM_RMOD_layer {
                         label = "NUM_RMOD";
 /*
-// -----------------------------------------------------------------------------------------
-// |      |  !  |  7  |  8  |  9  | =   |   |  *  |  &  |  #  |  \  |     |      |
-// |      |  |  |  1  |  2  |  3  | ()  |   |  -+ | SHFT| CTL |  [] |     |      |
-// |      |     |  4  |  5  |  6  | TAB |   |  _^ | CMD |S-CMD|  }  |  $  |      |
-//                    |     | BSPC| N0  |   | SPC | MAIN|     |
+
+    // -----------------------------------------------------------------------------------------
+    // |      |  !  |  7  |  8  |  9  | =   |   |  *  |  &  |  #  |  \  |     |      |
+    // |      |  |  |  1  |  2  |  3  | ()  |   |  -+ | SHFT| CTL |  [] |     |      |
+    // |      |     |  4  |  5  |  6  | TAB |   |  _^ | CMD |S-CMD|  {  |  $  |      |
+    //                    |     | BSPC|  0  |   | SPC | MAIN|     |
 */
                         bindings = <
-   &none    &kp EXCL &kp N7 &kp N8 &kp N9   &kp EQUAL       &kp KP_ASTERISK &AMPS       &kp HASH     &kp BSLH   &none     &none
+   &none    &kp EXCL &kp N7 &kp N8 &kp N9   &kp EQUAL       &kp KP_ASTERISK &kp AMPS    &kp HASH     &kp BSLH   &none     &none
    &none    &kp PIPE &kp N1 &kp N2 &kp N3   &lpn_rpn        &min_plus       &skq RSHFT  &sk RCTRL    &lbkt_rbkt &none     &none
-   &none    &none    &kp N4 &kp N5 &kp N6   &kp TAB         &und_crt        &sk RGUI    &sk LS(RGUI) &kp RBRC   &kp DLLR  &none
+   &none    &none    &kp N4 &kp N5 &kp N6   &kp TAB         &und_crt        &sk RGUI    &sk LS(RGUI) &kp LBRC   &kp DLLR  &none
                     	     &none &kp BSPC &kp N0          &kp SPACE       &to MAIN    &none
                         >;
                 };
 
 
                 NAV_layer {
+                // will want to have cmd-space, alt-p alr easily accessible from main 
+                // add window mgmt stuff here (or as combos to main) after settting up things like yabai
                     bindings = <
-    &none      &kp HOME    &kp C_VOL_UP &kp C_PREV  &kp C_NEXT &kp C_MUTE        &sk RA(GUI) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)  &none         &none
-    &none      &kp LC(E)   &kp LEFT     &kp DOWN    &kp RIGHT  &kp C_PP          &sk RALT    &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none
-    &none      &kp END     &kp LC(A)    &kp UP      &sk RCTRL  &kp LG(ENTER)     &kp LG(O)   &kp LG(N)     &sk RA(RCTRL) &none
-                                        &none       &kp BSPC   &kp DEL           &to MAIN    &sk RSHFT     &none
+    &none   &none         &kp END       &kp HOME   &kp LC(LEFT) &kp LC(RIGHT)       &sk RA(GUI) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)  &none         &none
+    &none   &kp LC(E)     &kp LG(F)     &kp LEFT   &kp UP       &kp RIGHT           &sk RALT    &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none
+    &none   &kp LC(A)     &kp LG(SPACE) &kp LG(W)  &kp DOWN     &sk LGUI            &kp LG(C)   &kp LG(V)     &kp LG(O)     &kp LG(N)  &none         &none    
+                                        &none      &kp LG(M)    &sl SYM_LMOD        &sk RSHFT   &to MAIN  &none
 
+
+/* To add to FN layer
+C_PP
+C_MUTE
+C_NEXT
+C_PREV
+C_VOL_UP
+*/
 
 
                     >;
