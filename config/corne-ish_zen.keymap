@@ -284,7 +284,7 @@ macros {
             key-positions = <15 16 17>;
             bindings = <&kp LA(P)>;
             layers = <0 2 3>;
-        }
+        };
 
         combo_cmd_space {
             timeout-ms = <30>;
