@@ -79,7 +79,7 @@ macros {
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT_W";
             #binding-cells = <2>;
-            tapping_term_ms = <280>;
+            tapping_term_ms = <250>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
