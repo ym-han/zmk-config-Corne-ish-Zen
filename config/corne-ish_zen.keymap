@@ -29,7 +29,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <270>;
+    tapping_term_ms = <180>;
 };
 
 
@@ -69,11 +69,23 @@ macros {
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping_term_ms = <135>;
+            tapping_term_ms = <220>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        asw: auto_shift_weak_finger {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT_W";
+            #binding-cells = <2>;
+            tapping_term_ms = <280>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <19>;
+        };
+
 
         s_col: s_col {
             compatible = "zmk,behavior-mod-morph";
@@ -404,9 +416,9 @@ macros {
 // |   Z  |  X  |  F  |  L  |  C  |  W  |   |  -+ |  U   |  O  |  Y  |  K  |   Q  |
 //                    |     | BSPC|  T  |   | SPC | SYMOD|     |
                         bindings = <
-   &none    AS(J) AS(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &none
-   &kp N0   AS(R) AS(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  AS(I)  AS(H)   &none
-   AS(Z)    AS(X) AS(F) AS(L) AS(C) AS(W)       &min_plus  AS(U)     AS(O)  AS(Y)  AS(K)   AS(Q)
+   &none    ASW(J) ASW(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &none
+   &kp N0   ASW(R) ASW(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  ASW(I)  ASW(H)   &none
+   AS(Z)    ASW(X) ASW(F) ASW(L) AS(C) AS(W)       &min_plus  AS(U)     AS(O)  ASW(Y)  ASW(K)   AS(Q)
                 &none   &kp BSPC    AS(T)       &kp SPACE  &sl SYM_LMOD  &none
                         >;
                 };
