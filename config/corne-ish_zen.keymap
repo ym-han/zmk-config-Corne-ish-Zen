@@ -29,7 +29,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <250>;
+    tapping_term_ms = <270>;
 };
 
 
