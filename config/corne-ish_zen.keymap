@@ -230,7 +230,7 @@ macros {
             key-positions = <9 10>;
             bindings = <&kp DLLR>;
             layers = <0 1 2 3>;
-        }
+        };
 
         combo_tab {
             timeout-ms = <30>;
