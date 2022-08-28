@@ -1,6 +1,10 @@
 /*
+/*
 *
-* Adapted from smores (https://github.com/smores56/zmk-config/blob/main/config/base.keymap) and https://github.com/jimmerricks/zmk-config/blob/main/config/flea.keymap and https://sites.google.com/alanreiser.com/handsdown Hands Down Gold
+* Adapted from smores (https://github.com/smores56/zmk-config/blob/main/config/base.keymap) 
+* https://github.com/jimmerricks/zmk-config/blob/main/config/flea.keymap  
+* https://sites.google.com/alanreiser.com/handsdown Hands Down Gold
+* https://github.com/moutis/zmk-config-Corne-ish-Zen/tree/main/config
 * SPDX-License-Identifier: MIT
 *
 */
@@ -213,6 +217,20 @@ macros {
             layers = <0 2 3>;
         };
 
+
+        combo_caret {
+            timeout-ms = <30>;
+            key-positions = <2 3>;
+            bindings = <&kp CARET>;
+            layers = <0 1 2 3>;
+        };
+
+        combo_dollar {
+            timeout-ms = <30>;
+            key-positions = <9 10>;
+            bindings = <&kp DLLR>;
+            layers = <0 1 2 3>;
+        }
 
         combo_tab {
             timeout-ms = <30>;
@@ -441,7 +459,7 @@ macros {
    &none    ASW(J) ASW(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &none
    &kp N0   ASW(R) ASW(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  ASW(I)  ASW(H)   &none
    ASW(Z)   ASW(X) ASW(F) AS(L) AS(C) AS(W)       &min_plus  AS(U)     AS(O)  ASW(Y)  ASW(K)   ASW(Q)
-                   &none  &kp BSPC    AS(T)       &kp SPACE  &sl SYM_LMOD  &none
+                   AS(T)  &kp BSPC    AS(T)       &sl SYM_LMOD  &kp SPACE  &kp SPACE
                         >;
                 };
 
@@ -466,16 +484,16 @@ macros {
 /*
 
     // -----------------------------------------------------------------------------------------
-    // |      |  !  |  7  |  8  |  9  | =   |   |  *  |  &  |  #  |  \  |     |      |
-    // |      |  |  |  1  |  2  |  3  | ()  |   |  -+ | SHFT| CTL |  [] |     |      |
-    // |      |     |  4  |  5  |  6  | TAB |   |  _^ | CMD |S-CMD|  {  |  $  |      |
-    //                    |     | BSPC|  0  |   | SPC | MAIN|     |
+    // |      |  !  |  7  |  8  |  9   | =   |   |  *  |  &  |  #  |  \  |     |      |
+    // |      |  |  |  1  |  2  |  3   | ()  |   |  -+ | SHFT| CTL |  [] |     |      |
+    // |      |  4  |  5  |  6  |SHFT-G| TAB |   |  _^ | CMD |S-CMD|  {  |  $  |      |
+    //                    |     | BSPC |  0  |   | SPC | MAIN|     |
 */
                         bindings = <
-   &none    &kp EXCL &kp N7 &kp N8 &kp N9   &kp EQUAL       &kp KP_ASTERISK &kp AMPS    &kp HASH     &kp BSLH   &none     &none
-   &none    &kp PIPE &kp N1 &kp N2 &kp N3   &lpn_rpn        &min_plus       &skq RSHFT  &sk RCTRL    &lbkt_rbkt &none     &none
-   &none    &none    &kp N4 &kp N5 &kp N6   &kp TAB         &und_crt        &sk RGUI    &sk LS(RGUI) &kp LBRC   &kp DLLR  &none
-                    	     &none &kp BSPC &kp N0          &kp SPACE       &to MAIN    &none
+   &none    &kp EXCL &kp N7 &kp N8 &kp N9    &kp EQUAL       &kp KP_ASTERISK &kp AMPS    &kp HASH     &kp BSLH   &none     &none
+   &none    &kp PIPE &kp N1 &kp N2 &kp N3    &lpn_rpn        &min_plus       &skq RSHFT  &sk RCTRL    &lbkt_rbkt &none     &none
+   &none    &kp N4   &kp N5 &kp N6 &kp LS(G) &kp TAB         &und_crt        &sk RGUI    &sk LS(RGUI) &kp LBRC   &kp DLLR  &none
+                    	    &none  &kp BSPC  &kp N0          &kp SPACE       &to MAIN    &none
                         >;
                 };
 
