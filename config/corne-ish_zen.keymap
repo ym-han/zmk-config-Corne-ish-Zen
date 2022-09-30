@@ -18,7 +18,7 @@
 #define SYM_LMOD 1
 #define NUM_RMOD 2
 #define NAV 3
-#define FN 4
+#define STENO 4
 
 #define AS(keycode) &as LS(keycode) keycode
 #define ASW(keycode) &asw LS(keycode) keycode
@@ -450,16 +450,16 @@ macros {
 
                 MAIN_layer {
                         label = "MAIN";
-// -----------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 // |      |  J  |  G  |  M  |  P  |  V  |   |  ;: |  .&  |  /* |  "? |  '! |      |
 // |   0  |  R  |  S  |  N  |  D  |  B  |   |  ,| |  A   |  E  |  I  |  H  |      |
 // |   Z  |  X  |  F  |  L  |  C  |  W  |   |  -+ |  U   |  O  |  Y  |  K  |   Q  |
 //                    |     | BSPC|  T  |   | SPC | SYMOD|     |
                         bindings = <
-   &none    ASW(J) ASW(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &none
-   &kp N0   ASW(R) ASW(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  ASW(I)  ASW(H)   &none
-   ASW(Z)   ASW(X) ASW(F) AS(L) AS(C) AS(W)       &min_plus  AS(U)     AS(O)  ASW(Y)  ASW(K)   ASW(Q)
-                   AS(T)  &kp BSPC    AS(T)       &sl SYM_LMOD  &kp SPACE  &kp SPACE
+   &to STENO  ASW(J) ASW(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &to STENO
+   &kp N0     ASW(R) ASW(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  ASW(I)  ASW(H)   &none
+   ASW(Z)     ASW(X) ASW(F) AS(L) AS(C) AS(W)       &min_plus  AS(U)     AS(O)  ASW(Y)  ASW(K)   ASW(Q)
+                     AS(T)  &kp BSPC    AS(T)       &sl SYM_LMOD  &kp SPACE  &kp SPACE
                         >;
                 };
 
@@ -508,7 +508,7 @@ macros {
                                         &none      &kp LG(M)    &sl SYM_LMOD        &sk RSHFT   &to MAIN  &none
 
 
-/* To add to FN layer
+/* To do: make a FN layer and add the following to it
 C_PP
 C_MUTE
 C_NEXT
@@ -521,7 +521,7 @@ C_VOL_UP
                 };
 
             STENO_layer {
-
+                        label = "STENO";
                 bindings = <
     &none   &none   &none   &none      &to MAIN  &none                &none         &to MAIN &none   &none  &none   &none
     &none   &kp S   &kp T   &kp P      &kp H     &kp ASTERISK         &kp ASTERISK  &kp F    &kp P   &kp L   &kp T  &kp D
