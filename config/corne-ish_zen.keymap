@@ -519,5 +519,17 @@ C_VOL_UP
 
                     >;
                 };
+
+            STENO_layer {
+
+                bindings = <
+    &none   &none   &none   &none      &to MAIN  &none                &none         &to MAIN &none   &none  &none   &none
+    &none   &kp S   &kp T   &kp P      &kp H     &kp ASTERISK         &kp ASTERISK  &kp F    &kp P   &kp L   &kp T  &kp D
+    &none   &kp S   &kp K   &kp W      &kp R     &kp ASTERISK         &kp ASTERISK  &kp R    &kp B   &kp G  &kp S   &kp Z    
+                            &none      &kp A     &kp O                &kp E         &kp U    &none
+
+                >;
+            };
+
         };
 };
