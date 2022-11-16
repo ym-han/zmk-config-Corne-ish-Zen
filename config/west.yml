@@ -2,11 +2,11 @@ manifest:
   remotes:
     - name: LOWPROKB
       url-base: https://github.com/LOWPROKB
-    - name: ym-han
-      url-base: https://github.com/ym-han
+    - name: stites
+      url-base: https://github.com/stites
   projects:
     - name: zmk
-      remote: ym-han
+      remote: stites
       revision: zen-on-main+969+plover-hid
       import: app/west.yml
   self:
