@@ -1,11 +1,13 @@
 manifest:
   remotes:
-    - name: zmkfirmware
+    - name: LOWPROKB
       url-base: https://github.com/LOWPROKB
+    - name: stites
+      url-base: https://github.com/stites
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: Board-Corne-ish-Zen-dedicated-work-queue
+      remote: stites
+      revision: zen-on-main+969+plover-hid
       import: app/west.yml
   self:
     path: config
