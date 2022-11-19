@@ -256,30 +256,35 @@ macros {
             timeout-ms = <30>;
             key-positions = <16 27>;
             bindings = <&kp LG(Z)>;
+            layers = <0 1 2>;
         };
 
         combo_redo {
             timeout-ms = <30>;
             key-positions = <16 26 27>;
             bindings = <&kp LG(LS(Z))>;
+            layers = <0 1 2 3>;
         };
 
         combo_leftprn {
             timeout-ms = <30>;
             key-positions = <20 31>;
             bindings = <&kp LPAR>;
+            layers = <0 1 2 3>;
         };
 
         combo_rightprn {
             timeout-ms = <30>;
             key-positions = <20 33>;
             bindings = <&kp RPAR>;
+            layers = <0 1 2 3>;
         };
 
         combo_leftbrkt {
             timeout-ms = <30>;
             key-positions = <21 32>;
             bindings = <&kp LBKT>;
+            layers = <0 1 2 3>;
         };
 
         combo_rightbrkt {
@@ -340,12 +345,14 @@ macros {
             timeout-ms = <30>;
             key-positions = <32 33>;
             bindings = <&tog NAV>;
+            layers = <0 1 2>;
         };
 
         combo_go_numrmod {
             timeout-ms = <30>;
             key-positions = <18 19>;
             bindings = <&to NUM_RMOD>;
+            layers = <0 1 2 3>;
         };
 
         combo_pgup {
@@ -451,10 +458,10 @@ macros {
                 MAIN_layer {
                         label = "MAIN";
 // ---------------------------------------------------------------------------------
-// |      |  J  |  G  |  M  |  P  |  V  |   |  ;: |  .&  |  /* |  "? |  '! |      |
+// | STEN |  J  |  G  |  M  |  P  |  V  |   |  ;: |  .&  |  /* |  "? |  '! | STEN |
 // |   0  |  R  |  S  |  N  |  D  |  B  |   |  ,| |  A   |  E  |  I  |  H  |      |
 // |   Z  |  X  |  F  |  L  |  C  |  W  |   |  -+ |  U   |  O  |  Y  |  K  |   Q  |
-//                    |     | BSPC|  T  |   | SPC | SYMOD|     |
+//                    |     | BSPC|  T  |   |SYMOD|  SPC | SPC |
                         bindings = <
    &to STENO  ASW(J) ASW(G) AS(M) AS(P) AS(V)       &s_col     &dot_amp  &fsh_as &dqt_qn &sqt_bg  &to STENO
    &kp N0     ASW(R) ASW(S) AS(N) AS(D) AS(B)       &com_pipe  AS(A)     AS(E)  ASW(I)  ASW(H)   &none
